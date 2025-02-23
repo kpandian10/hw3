@@ -6,7 +6,12 @@ class PlacesController < ApplicationController
   def show
     # Find a Place by ID
     @place = Place.find_by({ "id" => params["id"] })
-    @entries = Entry.find_by({ "place_id" => @place["id"] })
+    @entries = []
+    for entry in Entry.all
+      if entry["place_id"] == @place["id"]
+        @entries << entry
+      end
+    end
   end
 
   def new

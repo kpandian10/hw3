@@ -4,7 +4,7 @@
 <h2>Entries</h2>
 <ul>
   <% for entry in @entries %>
-    <li><%= entry["title"] %> -- <%=entry["description"]%> (<%= entry["occurred_on"] %>) </li>
+    <li><%= entry["title"] %> (<%= entry["posted_on"] %>)</li>
   <% end %>
 </ul>
 <%= link_to "Add New Entry", "/places/#{@place["id"]}/entries/new" %>
