@@ -10,7 +10,3 @@ Rails.application.routes.draw do
   get("/places/:place_id/entries/new", { controller: "entries", action: "new" })
   post("/places/:place_id/entries", { controller: "entries", action: "create" })
 end
-
-
-
-end
