@@ -10,11 +10,9 @@ class EntriesController < ApplicationController
     @entry["description"] = params["description"]
     @entry["occurred_on"] = params["occurred_on"]
     @entry["place_id"] = @place["id"]
-    if @entry.save
-      redirect_to "/places/#{@place['id']}"
-    else
-      render :new # Re-render the form if validation fails
-    end
+    @entry.save
+    redirect_to "/places/#{@place['id']}"
   end
+
 end
 
