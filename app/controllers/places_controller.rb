@@ -15,7 +15,7 @@ class PlacesController < ApplicationController
   end
 
   def new
-    # Render view with new Place form
+    @place = Place.new
   end
 
   def create

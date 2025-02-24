@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get("/", { :controller => "places", :action => "index" })
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get("/places", {:controller => "places", :action => "index"})
   # Defines the root path route ("/")
