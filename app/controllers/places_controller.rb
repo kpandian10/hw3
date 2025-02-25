@@ -4,7 +4,6 @@ class PlacesController < ApplicationController
   end
 
   def show
-    # Find a Place by ID
     @place = Place.find_by({ "id" => params["id"] })
     @entries = []
     for entry in Entry.all
@@ -19,16 +18,9 @@ class PlacesController < ApplicationController
   end
 
   def create
-    # Start with a new Place
     @place = Place.new
-
-    # Assign user-entered form data to Place's columns
     @place["name"] = params["name"]
-
-    # Save Place row
     @place.save
-
-    # Redirect user to the list of places
     redirect_to "/places"
   end
 end
